@@ -1,0 +1,7 @@
+include: inclui um outro arquivo. Se ele não for encontrado, o codigo contnua
+rodando 
+require: requer um outro arquivo. Se ele não for encontrado, o codigo
+para de ser executado na parte em que deveria ter o arquivo.
+
+require_once faz com que requeira o arquivo uma vez. Caso já tenha sid ocarregado, 
+nao carregará novamente. o mesmo pro "include".
