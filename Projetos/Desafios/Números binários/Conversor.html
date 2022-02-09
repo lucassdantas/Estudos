@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor binário</title>
+    <style>
+        *{
+            text-align:center;
+        }
+        body{
+            background-color: #ffffff;
+        }
+        #title{
+            color:black;
+        }
+        h3{
+            color:black;
+        }
+       #conversor{
+            color:black;
+            justify-items: center;
+            text-align:center;
+            
+        }
+        #divNumero{
+            padding:1%;
+        }
+        #lblNumero{
+            font-weight: bold;
+        }
+        #numero{
+            margin-top:1%;
+        }
+        #divResposta{
+            padding:1%;
+        }
+        #lblResposta{
+            font-weight: bold;
+
+        }
+        #resposta{
+            margin-top:1%;
+        }
+        #botao{
+            margin:3%;
+        }
+        #hResposta{
+            color:black;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title"> Conversor de hexadecimal em binário!</h1>
+    <section id="conversor">
+        <div id="divNumero">
+            <label id="lblNumero">Digite o valor:</label>
+            <br>
+            <input type="number" id="numero" value="0">
+        </div>
+        <br>
+        <div id="divResposta">
+            <label id="lblResposta">Resposta:</label>
+            <br>
+            <input type="text" id="resposta" readonly>
+        </div>
+        <label id="aviso"> </label>
+        <br>
+        <button id="botao">Calcular</button>
+       <!-- <h2 id="title">Histórico</h2>
+        <h3 id="hRespostaA">Respostas anteriores:</h3>-->
+    </section>
+
+</body>
+<script>
+    let botao = document.querySelector("#botao")
+    let x = botao.addEventListener("click", function () {
+        let n1 = document.querySelector("#numero").value
+        let r = document.querySelector("#resposta")
+        let aviso = document.querySelector("#aviso")
+        let z = "0"
+        if (n1.length > 8) {
+            aviso.innerText = ("São permitidos apenas 8 caracteres")
+        } else { if (n1 < 0) {
+            aviso.innerText = ("Digite um número maior que 0")
+        }       else{ 
+            aviso.innerText = (" ")
+                    do {
+                        z = (String(n1%2)) + z
+                        n1 = (parseInt(n1/2))
+                    } while (1 <= n1);
+                    let z2 = z.slice(0, -1)
+                    r.value = z2
+                    }
+                }
+        })
+   let a =  document.addEventListener("keypress", function(e) {
+        if(e.key === "Enter") {
+            let n1 = document.querySelector("#numero").value
+            let r = document.querySelector("#resposta")
+            let aviso = document.querySelector("#aviso")
+            let z = "0"
+            if (n1.length > 8) {
+                aviso.innerText = ("São permitidos apenas 8 caracteres")
+            } else { if (n1 < 0) {
+                aviso.innerText = ("Digite um número maior que 0")
+            }       else{ 
+                aviso.innerText = (" ")
+                        do {
+                            z = (String(n1%2)) + z
+                            n1 = (parseInt(n1/2))
+                        } while (1 <= n1);
+                        z2 = z.slice(0, -1)
+                        r.value = z2
+                        }
+                    }
+        }
+    })
+</script>
+</html>
