@@ -6,24 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sagrados Corações de Jesus e Maria</title>
     <style>
-        body{
+        *{
             margin:0;
             padding:0;
             box-sizing:border-box;
         }
-        #top-bar{
-            background-color: rgb(16, 203, 236);;
+        body{
+            width:100vw;
+            height:100vh;
+            
         }
-        .top-bar{
+        #top-bar{
+            background-color: rgb(16, 203, 236);
             display:flex;
+            align-items:center;
+            justify-content:space-between;  
+            margin:0 0 10px 0;
+            width:100%;
+            height:70px;
+            padding:0 50px 0 20px;
+        }            
+            
+        
+        #navigationList{
+            display:flex;
+            list-style:none;
+           
+            color:black;
+        }
+        #navigationList li{
+            margin-left:10px;
+            letter-spacing:1px;
+            font-size:12px;
+            display:flex;
+            
+        }
+        #logo{
+            width:60px;
+            height:60px;
         }
         #title{
             text-align:center;
+            margin:0 0 40px 0;
         }
         #JesusEMaria{
             text-align:center;
             
             
+        }
+        #form{
+            display:flex;
+            justify-content:space-around;
+            
+        }
+        input{
+            size:450px;
         }
         #imgJesus, #imgMaria{
             width:25vw;
@@ -60,21 +97,15 @@
 </head>
 <body>
     <header>
-        <div id="top-bar" class="top-bar">
-            <section id="left-menu" class="top-bar">
-                <ul class="top-bar">
-                    <img src="" alt="Logo">
-                    <li>Sagrados corações</li>
-                    <li></li>
-                </ul>
-            </section>
-            <section id="right-menu">
-                <ul class="top-bar">
-                    <li>Eucaristía</li>
-                    <li>Seguir Jesus?</li>
-                </ul>
-            </section>
-        </div>
+        <nav id="top-bar" class="top-bar">
+            <img id="logo" src="img/sagradoCoracao.png" alt="Logo">
+            <ul id="navigationList" class="top-bar">
+                <li>Eucaristía</li>
+                <li>Seguir Jesus?</li>
+                <li>Sagrados corações</li>
+                <li>Mais</li>
+            </ul>
+        </nav>
     </header>
     <main>
         <h1 class="title" id="title">Sagrados Corações</h1> 
@@ -91,6 +122,22 @@
         </section>
         <section>
             <div class="separator">
+            </div>
+        </section>
+        <section id="form" class="form">
+            <div id="divForm" class="form"> 
+                <form>
+                <label>Nome</label>
+                <br>
+                <input>
+                <br>
+                <label>Mensagem</label>
+                <br>
+                <textarea> </textarea>
+                </form>
+            </div>
+            <div id="divFormImg" class="form">
+                <img id="imgMaria"src="https://blog.avemaria.com.br/restrito/img/noticias/db8b79b48307bcc17a2a91be3593b90f.jpg" alt="Imaculado coração de Maria">>
             </div>
         </section>
     </main>
