@@ -57,23 +57,38 @@
         #form{
             display:flex;
             justify-content:space-around;
+            padding:3px;
             
         }
-        input{
-            size:450px;
+        #divForm{
+            width:40%;
+        }
+        #divFormImg{
+            width:10%;
+        }
+      
+        
+    
+      
+        #JesusEMaria{
+            display:flex;
+            justify-items:space-around;
+            text-align:center;
+            justify-content:center;
         }
         #imgJesus, #imgMaria{
             width:25vw;
             height:20vh;
-            max-height:80px;
+            max-height:70px;
             max-width:100px;
             min-height:50px;
-            min-width:50px;
+            min-width:80px;
             
+        
             border-radius:25px;
         }
         #divJesus{
-            display:inline-block;
+            
             text-align:center;
             width:40%;
             margin: 0 0 0 0;
@@ -81,17 +96,38 @@
             
         }
         #divMaria{
-            display:inline-block;
+           
             text-align:center;
             width:40%;
             margin: 0 0px 0 0px;
         }
 
         .separator{
-            margin-top:10px;
+            margin:20px 0;
             width:100%;
             height:7px;
             background-color:purple;
+        }
+        @media (max-width: 500px)
+        {
+            #form{
+            display:block;
+          
+            
+            padding:0 0 0 40%;
+            
+            }
+
+            #JesusEMaria{
+                display:block;
+              
+                padding: 0 0 0 40%;
+               
+              
+                width:100%;
+               
+            }
+        
         }
     </style>
 </head>
@@ -120,24 +156,21 @@
                 <img id="imgMaria"src="https://blog.avemaria.com.br/restrito/img/noticias/db8b79b48307bcc17a2a91be3593b90f.jpg" alt="Imaculado coração de Maria">
             </div>
         </section>
-        <section>
-            <div class="separator">
-            </div>
-        </section>
+        <div class="separator"></div>
         <section id="form" class="form">
             <div id="divForm" class="form"> 
                 <form>
-                <label>Nome</label>
-                <br>
-                <input>
-                <br>
-                <label>Mensagem</label>
-                <br>
-                <textarea> </textarea>
+                    <label>Nome</label>
+                    <br>
+                    <input>
+                    <br>
+                    <label>Mensagem</label>
+                    <br>
+                    <textarea> </textarea>
                 </form>
             </div>
             <div id="divFormImg" class="form">
-                <img id="imgMaria"src="https://blog.avemaria.com.br/restrito/img/noticias/db8b79b48307bcc17a2a91be3593b90f.jpg" alt="Imaculado coração de Maria">>
+                <img id="imgMaria"src="https://blog.avemaria.com.br/restrito/img/noticias/db8b79b48307bcc17a2a91be3593b90f.jpg" alt="Imaculado coração de Maria">
             </div>
         </section>
     </main>
