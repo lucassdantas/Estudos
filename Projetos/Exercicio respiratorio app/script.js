@@ -1,35 +1,50 @@
-let valueGetter = {
+
+
+let CustomValueGetter = {
 
     //Atributes -----
 
-    inspValue: 5,
-    PauseValue: 6, //document.querySelector(".cutdown"),
-    expV: 50,
-    ExpValue: 15,
+    inspValue: 0,
+    PauseValue: 0, 
+    expV: 0,
+    ExpValue: 0,
 
     
     //Getter and Setter ----
 
-    //setInspValue(){},
+    setInspValue(){
+        this.InspValue = document.querySelector("#InspValue")
+    },
     getInspValue(){    
         return this.inspValue
     },
-    //setPauseValue(){},
+
+
+    setPauseValue(){
+        this.PauseValue = document.querySelector("#PauseValue")
+    },
     getPauseValue(){
         return this.PauseValue
     },
 
-    setExpV(){
-        this.expV = Exercicios.Selector.Expiracao
-    },
-    //(Talvez não use) getExpV(){},
 
-    setExpValueF(ExpV, PauseV) {   
-       this.ExpValue = ExpV + PauseV
+    setExpValue(){
+        this.ExpValue = document.querySelector("#ExpValue")
     },
     getExpValue(){
         return this.ExpValue
     }
+
+
+    /*
+    setExpV(){
+        this.expV = Exercicios.Selector.Expiracao
+    },
+    //(Talvez não use) getExpV(){},
+    setExpValueF(ExpV, PauseV) {   
+       this.ExpValue = ExpV + PauseV
+    },
+    */
 }
 
 //OUTRO OBJETO =============
@@ -88,56 +103,125 @@ let Preenchedor = {
 
 //OUTRO OBJETO===================
 
+/*
 let valueSetter = {
-    InspValue: valueGetter.Inspvalue,
-    ExpValue: valueGetter.ExpValue,
-    Pausevalue: valueGetter.PauseValue,
-    
-
-
+    InspValue: ValueGetter.Inspvalue,
+    ExpValue: ValueGetter.ExpValue,
+    Pausevalue: ValueGetter.PauseValue,
 }
+*/
 
 //OUTRO OBJETO ===============
 
 let Exercicios = {
 
     //Atributes ----
-    Selected: document.querySelector(".cutdown"),
     Default: {
         Inspiracao: 5,
         Pausa: 5,
         Expiracao: 20
     },
 
+    Exercicio01: {
+        Inspiracao: 10,
+        Pausa: 10,
+        Expiracao: 40
+    },
+
+    Custom: {
+        Inspiracao: CustomValueGetter.InspValue,
+        Pausa: CustomValueGetter.PauseValue,
+        Expiracao: CustomValueGetter.ExpValue
+    },
+
 
     //METHODS ----
     Selector(){
-       let Select = this.Selected
-       let SelectV = 0
+       let Select = document.querySelector("#SelectExerc").value
+       let SelectV 
        switch (Select) {
-           case 1:
-               SelectV = this.
-               break;
 
-            case 2:
-                SelectV = this.
+            case "Padrão":
+                SelectV = this.Default
                 break;
-       
+
+            case "Custom":
+                SelectV = this.Custom
+                break;
+           
+            case "1":
+                SelectV = this.Exercicio01
+                break;    
+
            default:
-               SelectV = this.Default
+               SelectV = undefined
                break;
        }
+      
         return SelectV
 
+    },
+
+    SelectRepeat(){
+        let Selected = this.Selector()
+        let RepeatNumber
+        switch (Selected) {
+            case this.Default:
+                RepeatNumber = 4
+                break;
+
+            case this.Custom:
+                RepeatNumber = document.querySelector("#RepeatNumber").value
+
+            default:
+                
+                break;
+        }
+        
+        return RepeatNumber
     }
 }
 
+let App = {
+    //Methods 
 
+    Init(){
+        console.log("iniciou")
+        if((Exercicios.Selector != Exercicios.Custom) && (Exercicios.Selector != undefined)) {
+            console.log("vai funfar")
+            let InspCount = function() {
+                console.log("funcionou")
+                let InspText = document.querySelector("#InspText")
+               
+                for(let i = 0; i <= Exercicios.SelectRepeat(); i++) {
+                    let InspS = function() {
+                        let a = [1, 2, 3]
+                        InspText.innerText = Exercicios.Selector().Inspiracao
+                        console.log("oi")
+                    }   
+                    let Timer = setInterval(InspS, "1000")
+                    console.log("ta funfando")
+                    
+
+                }
+               
+            }         
+            InspCount()     
+        } else if(Exercicios.Selector = Exercicios.Custom) {
+            //colocar valores para exercício custom
+
+        } else {
+            //escrever aviso pedindo para inserir valores
+        }
+    
+    
+    }
+    
+}
 //OUTRA COISA ==============
-valueGetter.setExpValueF(2, 5)
-Preenchedor.setExpiracao(valueGetter)
-console.log(Preenchedor.Expiracao)
 
+let Start = document.querySelector("#ButtonInit")
+Start.addEventListener("click", App.Init)
 
 
 /* let ExpiracaoV = 2 //document.querySelector("")

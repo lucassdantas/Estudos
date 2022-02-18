@@ -5,65 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Respiração Lírica APP</title>
-    <style>
-        *{
-            padding:0;
-            margin:0;
-            box-sizing:border-box;
-        }
-        body{
-            width:100vw;
-            height:100vh;
-            overflow-x:hidden;
-        }
-
-        #CutDownSection{
-            display:flex;
-            justify-content:space-around;
-
-            width:100vw;
-            height:70vh;
-
-            background-color:gray;
-            text-align:center;
-
-        }
-
-        #InspiracaoDiv, #PausaDiv, #ExpiracaoDiv{
-            width:30%;
-            height:50%;
-            max-width:200px;
-            
-           
-            border-color:black;
-            border-width:2px;
-            border-style:solid;
-            border-radius:5px;
-        }
-        
-
-        
-    </style>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <header>
-        <h1>Canto Lírico APP</h1>
+        <h1 class="title">Canto Lírico APP</h1>
     </header>
     <main>
+        <div id="DivExercSelector">
+            <label id="SelectExercTitle">Selecione o exercício</label>
+            <select name="SeletorExercicio" id="SelectExerc">
+                <option value="Padrão">Padrão</option>
+                <option value="1">Exercício 1</option>
+                <option value="Custom">Customizado</option>
+            </select>           
+        </div>
+        <div id="DivCustomTitle" class="Custom hidden">
+            <div id="DivCustomInsp" class="CustomDiv">
+                <label>Inspiração</label>
+                <br>
+                <input id="InspValue" type="number">    
+            </div>
+            <div id="DivCustomPause" class="CustomDiv">
+                <label>Pausa</label>
+                <br>
+                <input id="PauseValue"type="number">    
+            </div> 
+            <div id="DivCustomExp" class="CustomDiv">
+                <label>Expirção</label>
+                <br>
+                <input id="ExpValue" type="number">    
+            </div>  
+            <div id="RepeatValue" class="CustomDiv">
+                <label id="SelectRepeatTitle" class="hide">Selecione o número de repetições</label>
+                <br>
+                <input type="number" id="RepeatNumber">
+            </div>  
+        </div>
         <section id="CutDownSection" class="cutdown">
             <div id="InspiracaoDiv" class="cutdown">
-                <h2 class="cutdown">Inspire </h2>
-                <p  class="cutdown">0 S</p>
+                <h2 class="cutdown">Inspire por:</h2>
+                <p id="InspText" class="cutdown">0 S</p>
             </div>
+
             <div id="PausaDiv" class="cutdown">
-                <h2 class="cutdown">Segure </h2>
-                <p  class="cutdown">0 S</p>
+                <h2 class="cutdown">Segure por: </h2>
+                <p id="PauseText" class="cutdown">0 S</p>
             </div>
+
             <div id="ExpiracaoDiv" class="cutdown">
-                <h2 class="cutdown">Expire </h2>
-                <p  class="cutdown">0 S</p>
+                <h2 class="cutdown">Expire por:</h2>
+                <p id="ExpText"  class="cutdown">0 S</p>
             </div>
         </section>
+        <button id="ButtonInit">Iniciar</button>
     </main>
     <footer>
         <h3>Graças a Deus</h3>
