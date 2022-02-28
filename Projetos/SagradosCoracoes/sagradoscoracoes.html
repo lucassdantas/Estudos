@@ -5,147 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sagrados Corações de Jesus e Maria</title>
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
-        body{
-            width:100vw;
-            height:100vh;
-            
-        }
-        #top-bar{
-            background-color: rgb(16, 203, 236);
-            display:flex;
-            align-items:center;
-            justify-content:space-between;  
-            margin:0 0 10px 0;
-            width:100%;
-            height:70px;
-            padding:0 50px 0 20px;
-        }            
-            
-        
-        #navigationList{
-            display:flex;
-            list-style:none;
-           
-            color:black;
-        }
-        #navigationList li{
-            margin-left:10px;
-            letter-spacing:1px;
-            font-size:12px;
-            display:flex;
-            
-        }
-        #logo{
-            width:60px;
-            height:60px;
-        }
-        #title{
-            text-align:center;
-            margin:0 0 40px 0;
-        }
-        #JesusEMaria{
-            text-align:center;
-            
-            
-        }
-        #form{
-            display:flex;
-            justify-content:space-around;
-            padding:3px;
-            
-        }
-        #divForm{
-            width:40%;
-        }
-        #divFormImg{
-            width:10%;
-        }
-      
-        
-    
-      
-        #JesusEMaria{
-            display:flex;
-            justify-items:space-around;
-            text-align:center;
-            justify-content:center;
-        }
-        #imgJesus, #imgMaria{
-            width:25vw;
-            height:20vh;
-            max-height:70px;
-            max-width:100px;
-            min-height:50px;
-            min-width:80px;
-            
-        
-            border-radius:25px;
-        }
-        #divJesus{
-            
-            text-align:center;
-            width:40%;
-            margin: 0 0 0 0;
-  
-            
-        }
-        #divMaria{
-           
-            text-align:center;
-            width:40%;
-            margin: 0 0px 0 0px;
-        }
-
-        .separator{
-            margin:20px 0;
-            width:100%;
-            height:7px;
-            background-color:purple;
-        }
-        @media (max-width: 500px)
-        {
-            #form{
-            display:block;
-          
-            
-            padding:0 0 0 40%;
-            
-            }
-
-            #JesusEMaria{
-                display:block;
-              
-                padding: 0 0 0 40%;
-               
-              
-                width:100%;
-               
-            }
-        
-        }
-    </style>
+    <link href="./style.css" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav id="top-bar" class="top-bar">
-            <img id="logo" src="img/sagradoCoracao.png" alt="Logo">
-            <ul id="navigationList" class="top-bar">
-                <li>Eucaristía</li>
-                <li>Seguir Jesus?</li>
-                <li>Sagrados corações</li>
-                <li>Mais</li>
-            </ul>
+            <div id="logoDIV">
+                <img id="logo" src="img/sagradoCoracao.png" alt="Logo">
+            </div>
+            <div id="navigationDIV">
+                <ul id="navigationList" class="top-bar">
+                    <li><a href="./eucaristia.html">Eucaristía</a></li>
+                    <li><a class="active" href="./sagradoscoracoes.html">Sagrados corações</li></a>
+                    <li><a href="">Seguir Jesus?</li></a>
+                    <li><a href="">Mais</li></a>
+                </ul>
+            </div>
+           
+            <img id="responsiveICON" class="" src="./img/responsive icon.png" alt="Ícone do menu resposnivo">
         </nav>
     </header>
     <main>
         <h1 class="title" id="title">Sagrados Corações</h1> 
-
         <section id="JesusEMaria">
             <div id="divJesus">
                 <h2 class="subtitle" id="subDeJesus">De Jesus</h2>
@@ -170,12 +51,16 @@
                 </form>
             </div>
             <div id="divFormImg" class="form">
-                <img id="imgMaria"src="https://blog.avemaria.com.br/restrito/img/noticias/db8b79b48307bcc17a2a91be3593b90f.jpg" alt="Imaculado coração de Maria">
+                <img id="imgMariaForm"src="https://blog.avemaria.com.br/restrito/img/noticias/db8b79b48307bcc17a2a91be3593b90f.jpg" alt="Imaculado coração de Maria">
             </div>
         </section>
     </main>
+    <footer>
+        <h3 class="footer-title">Com a graça de Deus,<br>
+        desenvolvido por Lucas Dantas</h3>
+    </footer>
     
     
-    <script src="./teste.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
