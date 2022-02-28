@@ -190,6 +190,8 @@ footer{
     line-height:40px;
 }
 
+
+/*RESPONSIVE RESPONSIVE RESPONSIVE*/
 @media (max-width: 900px)
 {   
     
@@ -200,36 +202,54 @@ footer{
         display:inline-block;
         align-items:center;
         position:fixed;
+        text-align:center;
+
         width:100%;
         height:90px;
-        position:sticky;
-        text-align:center;
-        
-        
+
         top:0vh;
-       
-
-        
-
         
     }
+
+
  
     nav ul{
         display:flex;
         flex-direction:column;
         position:fixed;
 
-        width:45%;
         height:100%;
+        width:45%;
        
-        left:55vw;
+        
+
+        opacity:10;
+
         top:90px;
+        left:55%;
+        margin-left:100%;
+        
+        
 
         background-color: gray;
+        transition: 1s; 
+       
+        
+
        
         
     }
-      
+    
+    .show {
+        margin-left:0;
+        
+        opacity:0.97;
+
+        transition:1s;
+        
+        
+    }
+
     nav li{
         letter-spacing:1px;
      
@@ -286,8 +306,8 @@ footer{
 @media (max-width: 500px)
 {   
     nav ul li{
-        font-size:12px;
-        line-height:50px;
+        font-size:10px;
+        line-height:40px;
         font-weight:bold;
     }
     a.active{
@@ -299,10 +319,10 @@ footer{
 
 }
 
-@media (max-width: 300px)
+@media (max-width: 420px)
 {   
     nav ul li{
-        font-size:8px;
+        font-size:15px;
     }
 
     nav ul{
