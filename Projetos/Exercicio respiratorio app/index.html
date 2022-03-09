@@ -14,7 +14,7 @@
     <main>
         <div id="DivExercSelector">
             <label id="SelectExercTitle">Selecione o exercício</label>
-            <select name="SeletorExercicio" id="SelectExerc">
+            <select name="SeletorExercicio" id="SelectExerc" class="ValueInput">
                 <option value="Padrão">Padrão</option>
                 <option value="1">Exercício 1</option>
                 <option value="Custom">Customizado</option>
@@ -22,47 +22,50 @@
         </div>
         <div id="DivCustomTitle" class="Custom hidden">
             <div id="DivCustomInsp" class="CustomDiv">
-                <label>Inspiração</label>
+                <label class="CustomLabel">Inspiração</label>
                 <br>
-                <input id="InspValue" type="number">    
+                <input id="InspValue" type="number" class="ValueInput">    
             </div>
             <div id="DivCustomPause" class="CustomDiv">
-                <label>Pausa</label>
+                <label class="CustomLabel">Pausa</label>
                 <br>
-                <input id="PauseValue"type="number">    
+                <input id="PauseValue"type="number" class="ValueInput">    
             </div> 
             <div id="DivCustomExp" class="CustomDiv">
-                <label>Expirção</label>
+                <label class="CustomLabel">Expirção</label>
                 <br>
-                <input id="ExpValue" type="number">    
+                <input id="ExpValue" type="number" class="ValueInput">    
             </div>  
             <div id="RepeatValue" class="CustomDiv">
                 <label id="SelectRepeatTitle" class="hide">Selecione o número de repetições</label>
                 <br>
-                <input type="number" id="RepeatNumber">
+                <input type="number" id="RepeatNumber" class="ValueInput">
             </div>  
         </div>
         <section id="CutDownSection" class="cutdown">
             <div id="InspiracaoDiv" class="cutdown">
-                <h2 class="cutdown">Inspire por:</h2>
-                <p id="InspText" class="cutdown">0 S</p>
+                <h2 class="cutdown-title">Inspire por:</h2>
+                <p id="InspText" class="cutdown text">0 S</p>
             </div>
 
             <div id="PausaDiv" class="cutdown">
-                <h2 class="cutdown">Segure por: </h2>
-                <p id="PauseText" class="cutdown">0 S</p>
+                <h2 class="cutdown-title">Segure por: </h2>
+                <p id="PauseText" class="cutdown text">0 S</p>
             </div>
 
             <div id="ExpiracaoDiv" class="cutdown">
-                <h2 class="cutdown">Expire por:</h2>
-                <p id="ExpText"  class="cutdown">0 S</p>
+                <h2 class="cutdown-title">Expire por:</h2>
+                <p id="ExpText"  class="cutdown text">0 S</p>
             </div>
         </section>
-        <button id="ButtonInit">Iniciar</button>
+        <div id="DivButton">
+            <button id="ButtonInit">Iniciar</button>
+        </div>
     </main>
-    <footer>
-        <h3>Graças a Deus</h3>
-        <h4>Desenvolvido por Lucas Dantas</h4>
+    <footer id="Footer">
+        <h3 id="DeoGratias">Graças a Deus</h3>
+        <br>
+        <h4 id="CopyRight">Desenvolvido por Lucas Dantas</h4>
     </footer>
     <script src="./script.js"></script>
 </body>
