@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respiração Lírica APP</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <h1 class="title">Canto Lírico APP</h1>
+    </header>
+    <main>
+        <div id="DivExercSelector">
+            <label id="SelectExercTitle">Selecione o exercício</label>
+            <select name="SeletorExercicio" id="SelectExerc" class="ValueInput">
+                <option value="Padrão">Padrão</option>
+                <option value="1">Exercício 1</option>
+                <option value="Custom">Customizado</option>
+            </select>           
+        </div>
+        <div id="DivCustomTitle" class="Custom hidden">
+            <div id="DivCustomInsp" class="CustomDiv">
+                <label class="CustomLabel">Inspiração</label>
+                <br>
+                <input id="InspValue" type="number" class="ValueInput">    
+            </div>
+            <div id="DivCustomPause" class="CustomDiv">
+                <label class="CustomLabel">Pausa</label>
+                <br>
+                <input id="PauseValue"type="number" class="ValueInput">    
+            </div> 
+            <div id="DivCustomExp" class="CustomDiv">
+                <label class="CustomLabel">Expirção</label>
+                <br>
+                <input id="ExpValue" type="number" class="ValueInput">    
+            </div>  
+            <div id="RepeatValue" class="CustomDiv">
+                <label id="SelectRepeatTitle" class="hide">Selecione o número de repetições</label>
+                <br>
+                <input type="number" id="RepeatNumber" class="ValueInput">
+            </div>  
+        </div>
+        <section id="CutDownSection" class="cutdown">
+            <div id="InspiracaoDiv" class="cutdown">
+                <h2 class="cutdown-title">Inspire por:</h2>
+                <p id="InspText" class="cutdown text">0 S</p>
+            </div>
+
+            <div id="PausaDiv" class="cutdown">
+                <h2 class="cutdown-title">Segure por: </h2>
+                <p id="PauseText" class="cutdown text">0 S</p>
+            </div>
+
+            <div id="ExpiracaoDiv" class="cutdown">
+                <h2 class="cutdown-title">Expire por:</h2>
+                <p id="ExpText"  class="cutdown text">0 S</p>
+            </div>
+        </section>
+        <div id="DivButton">
+            <button id="ButtonInit">Iniciar</button>
+        </div>
+    </main>
+    <footer id="Footer">
+        <h3 id="DeoGratias">Graças a Deus</h3>
+        <br>
+        <h4 id="CopyRight">Desenvolvido por Lucas Dantas</h4>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+</html>
