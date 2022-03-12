@@ -7,7 +7,20 @@
     <title>Classes</title>
 </head>
 <body>
+
     <?php
+    require "./classe02/classe02.php";
+    require "./classeconflitante/classe02conflitante.php";
+    use classe02\Teste as Teste01;
+    use classeconflitante\Teste as Teste02;
+    #ou
+    #use classe02\Teste;
+    #ou
+    #$aaa = #new\classe02\Teste();
+    $aaa = new Teste01();
+    $bbb = new Teste02();
+
+
     class Cristo{
         const ser = "Deus";
         public $nome;
