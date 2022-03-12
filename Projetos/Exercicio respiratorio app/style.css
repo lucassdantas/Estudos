@@ -31,7 +31,7 @@ header{
     
 }
 
-#DivCustomTitle{
+#DivCustom{
     display:flex;
     flex-wrap:wrap;
 
@@ -46,6 +46,10 @@ header{
 .CustomDiv{
     margin:10px 0;
     display:grid;
+}
+.CustomHidden{
+    display:none;
+    visibility: hidden;
 }
 
 #CutDownSection{

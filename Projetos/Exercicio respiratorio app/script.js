@@ -1,5 +1,3 @@
-
-
 //Pega os valores do exercicio custom
 let CustomValueGetter = {
 
@@ -122,23 +120,27 @@ let Exercicios = {
 
     //Atributes ----
     Default: {
+        ExercName:"Default",
         Inspiracao: 5,
         Pausa: 5,
         Expiracao: 20
     },
 
     Exercicio01: {
+        ExercName:"Exercicio 01",
         Inspiracao: 10,
         Pausa: 10,
         Expiracao: 40
     },
 
     Custom: {
+        ExercName:"Custom",
         Inspiracao: CustomValueGetter.InspValue,
         Pausa: CustomValueGetter.PauseValue,
-        Expiracao: CustomValueGetter.ExpValue
+        Expiracao: CustomValueGetter.ExpValue,
     },
 
+    Selected:"",
 
     //METHODS ----
     Selector(){
@@ -150,18 +152,24 @@ let Exercicios = {
 
             case "Padrão":
                 SelectV = this.Default
+                this.Selected = SelectV.ExercName.value
                 break;
 
             case "Custom":
                 SelectV = this.Custom
+                console.log(SelectV.ExercName)
+                this.Selected = SelectV.ExercName.value
+                this.customVisibility()             
                 break;
            
             case "1":
                 SelectV = this.Exercicio01
+                this.Selected = SelectV.ExercName
                 break;    
 
            default:
                SelectV = undefined
+               this.Selected = "none"
                break;
        }
       
@@ -189,6 +197,27 @@ let Exercicios = {
         
         return RepeatNumber
     },
+
+    //Adiciona as opções para customizaçao
+    customVisibility(){
+        let CustomDiv = document.querySelector(".Custom").classList
+
+        function customShow(Custom){
+            Custom.remove("CustomHidden")
+            console.log("oi")
+        }
+
+        function customHide(Custom){
+            Custom.add("CustomHidden")
+            console.log("ei")    
+        }    
+        if (this.Selected == "Custom"){
+            customShow(CustomDiv)
+        } else {
+            customHide(CustomDiv)
+        }
+    },
+
 
     //Getters ---
     getInspValue(){
@@ -322,8 +351,13 @@ let App = {
         
         //Verifica o exercicio seleconado
         Exercicios.Selector()
+        let SelectInput = document.querySelector("#SelectExerc")
+        SelectInput.addEventListener("input", Exercicios.Selector)
+
         //Verifica a repetiçao selecionada
         Exercicios.SelectRepeat()
+
+        
 
         //Pega os valores dos segundos e cria arrays
         SecondMaker.ValueGetterSetter()
@@ -332,6 +366,8 @@ let App = {
         SecondsSelector.setInsp()
         SecondsSelector.setExp()
         SecondsSelector.setPause()
+
+  
 
 
 
@@ -345,6 +381,8 @@ let App = {
             Timer.ExpireTime(1)
         } else if(Exercicios.Selector = Exercicios.Custom) {
             //colocar valores para exercício custom
+           
+
 
         } else {
             //escrever aviso pedindo para inserir valores
@@ -355,6 +393,18 @@ let App = {
     
 }
 //OUTRA COISA ==============
+let aa = document.querySelector("#SelectExerc").value
+ switch (aa) {
+     case "Custom":
+         console.log("oi")
+         break;
+    case "Padrão":
+        console.log("oooi")
+        break;
+
+     default:
+         break;
+ }
 
 let Start = document.querySelector("#ButtonInit")
 App.LoadFunctions()
