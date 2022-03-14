@@ -1,12 +1,5 @@
 {
-    "name": "lucas/composer",
-    "authors": [
-        {
-            "name": "Lucas Dantas",
-            "email": "lucasdantasprogramador@gmail.com"
-        }
-    ],
-    "require": {
+    "require":{
         
     }
 }
