@@ -60,12 +60,16 @@ let SecondMaker = {
     //Methods ============
 
     Contador(Value) {
+        //Cria um array do número selecionado até 0
         //Cria um array de 0 até o número selecionado
-        let ValueList = [Value]      
-        let Count = ValueList[0]    
-        for (i = 0; i <= Count; i++){
+        let ValueList = []      
+        ValueList[Value] = Value
+        //let Count = ValueList[0]    
+        for (i = Value; i = 0; i--){
             ValueList[i] = i
+            
         }     
+        
         return ValueList   
     },
 
@@ -304,11 +308,11 @@ let Timer = {
         let InspText = SecondsSelector.getInsp()
         let Changer = function () {           
             InspText.innerText = (String(SecondMaker.Inspiracao[t]))
-            if(t > Exercicios.Selector().Inspiracao){
+            if(t < 0){
                 clearInterval(Interval)
                 InspText.innerText = "0 S"
             }
-            t++
+            t--
         }
         let Interval = setInterval(Changer, "1000") 
         
@@ -376,7 +380,7 @@ let App = {
     Init(){
         
         if((Exercicios.Selector != Exercicios.Custom) && (Exercicios.Selector != undefined)) {
-            Timer.InspTime(1)
+            Timer.InspTime(5)
             Timer.HoldTime(1) 
             Timer.ExpireTime(1)
         } else if(Exercicios.Selector = Exercicios.Custom) {
