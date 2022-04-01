@@ -1,6 +1,6 @@
 <?php 
-require_once "db_connect.php";
-require_once "includes/header.php";
+require_once "./db_connect.php";
+require_once "./includes/header.php";
 if(isset($_GET["id"])){
     $id = mysqli_escape_string($connect, $_GET["id"]);
     $sql = "SELECT * FROM clientes WHERE id = '$id'";
@@ -12,7 +12,8 @@ if(isset($_GET["id"])){
 <div class="row">
     <div class="col s12 m6 push-m3">
         <h3 class="light">EDITAR CLIENTE</h3>
-        <form action="update.php" method="POST">
+        <form action="./update.php" method="POST">
+            <input type="hidden" name="id" value="<?php echo $dados["id"];?>">
             <div class="input-field col s12">
                 <input type="text" name="nome" id="nome" value="<?php echo $dados["nome"];?>">
                 <label for="nome">NOME</label>
@@ -22,18 +23,14 @@ if(isset($_GET["id"])){
                 <label for="sobrenome">SOBRENOME</label>
             </div>
             <div class="input-field col s12">
-                <input type="text" 
-                name="email"
-                id="email" value="<?php echo $dados["email"];?>">
+                <input type="text" name="email" id="email" value="<?php echo $dados["email"];?>">
                 <label for="email">EMAIL</label>
             </div>
             <div class="input-field col s12">
-                <input type="text" 
-                name="idade"
-                id="idade" value="<?php echo $dados["idade"];?>">
+                <input type="text" name="idade" id="idade" value="<?php echo $dados["idade"];?>">
                 <label for="idade">IDADE</label>
             </div>
-            <button type="submit" name="btn-cadastrar" class="btn red">ATUALIZAR</button>
+            <button type="submit" name="btn-editar" class="btn red">ATUALIZAR</button>
             <a href="index.php" type="submit" class="btn green">LISTA DE CLIENTES</a>
         </form>
         
@@ -42,6 +39,6 @@ if(isset($_GET["id"])){
 
         
 <?php 
-require_once "includes/footer.php";
+require_once "./includes/footer.php";
 ?>
 
