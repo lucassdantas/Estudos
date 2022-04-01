@@ -16,15 +16,5 @@ if(isset($_POST["btn-cadastrar"])){
         header('Location: ./index.php?');
     }
     #não é necessário inserir o ID pois ele é auto_increment
-
-
-    if(mysqli_query($connect, $sql)){
-        $_SESSION["mensagem"] = "Cadastrado com sucesso";
-        header('Location: ./index.php?');
-    }
-    else{
-        $_SESSION["mensagem"] = "Erro ao cadastrar";
-        header('Location: ./index.php?');
-    }
 }
 ?>
