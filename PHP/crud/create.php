@@ -2,14 +2,17 @@
 session_start();
 require_once "db_connect.php";
 if(isset($_POST["btn-cadastrar"])){
-    if((filter_var($email, FILTER_VALIDATE_EMAIL)) && (filter_var($idade, FILTER_VALIDATE_INT)))  {
-        $nome = mysqli_escape_string($connect, $_POST["nome"]);
-        $sobrenome = mysqli_escape_string($connect, $_POST["sobrenome"]);
-        $email = mysqli_escape_string($connect, $_POST["email"]);
-        $idade = mysqli_escape_string($connect, $_POST["idade"]);
+    $nome = mysqli_escape_string($connect, $_POST["nome"]);
+    $sobrenome = mysqli_escape_string($connect, $_POST["sobrenome"]);
+    $email = mysqli_escape_string($connect, $_POST["email"]);
+    $idade = mysqli_escape_string($connect, $_POST["idade"]);
+     if((filter_var($email, FILTER_VALIDATE_EMAIL)) && (filter_var($idade, FILTER_VALIDATE_INT)))  {
         $sql = "INSERT INTO clientes (nome, sobrenome, email, idade) VALUES ('$nome', '$sobrenome', '$email', '$idade')";
-        $_SESSION["mensagem"] = "Cadastrado com sucesso";
-        header('Location: ./index.php?');
+        if(mysqli_query($connect, $sql)){
+            $_SESSION["mensagem"] = "Cadastrado com sucesso";
+            header('Location: ./index.php?');
+        }
+       
     }
     else{
         $_SESSION["mensagem"] = "Erro ao cadastrar";
