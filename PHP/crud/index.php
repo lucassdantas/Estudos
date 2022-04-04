@@ -36,8 +36,9 @@
                     <td><a href="" class="btn-floating red"><i class="material-icons">delete</i></td>
                     <?php 
                     endwhile;
-                    ?>
+                ?>
                 </tr>
+          
             </tbody>
         </Table>
         <br>
