@@ -20,13 +20,12 @@
                 </tr>
             </thead>
             <tbody>
-            <?php 
-            $sql = "SELECT * FROM clientes";
-            $resultado = mysqli_query($connect, $sql);
-            while($dados = mysqli_fetch_array($resultado)):
-           
-           
-            ?>
+                <?php 
+                    $sql = "SELECT * FROM clientes";
+                    $resultado = mysqli_query($connect, $sql);
+                    if(mysqli_num_rows($resultado) > 0):
+                        while($dados = mysqli_fetch_array($resultado)):
+                ?>
                 <tr>
                     <td><?php echo $dados["nome"];?></td>
                     <td><?php echo $dados["sobrenome"];?></td>
@@ -52,10 +51,16 @@
                         </div>
                     </div>
                     <?php 
-                    endwhile;
-                ?>
+                        endwhile;
+                    else: ?>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>    
+                    <?php
+                    endif;
+                    ?>
                 </tr>
-          
             </tbody>
         </Table>
         <br>
