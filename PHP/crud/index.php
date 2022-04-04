@@ -42,10 +42,11 @@
                         <p>O cliente será deletado</p>
                         </div>
                         <div class="modal-footer">
-                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
+                       
                         <form action="delete.php" method="POST">
                             <input type="hidden" name="id" value="<?php echo $dados["id"];?>">
                             <button type="submit" name="btn-deletar" class="btn red">Quero deletar</button>
+                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
 
                         </form>
                         </div>
