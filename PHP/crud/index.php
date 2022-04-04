@@ -33,7 +33,18 @@
                     <td><?php echo $dados["email"];?></td>
                     <td><?php echo $dados["idade"];?></td>
                     <td><a href="./editar.php?id=<?php echo $dados['id'];?>" class="btn-floating orange"><i class="material-icons">edit</i></td>
-                    <td><a href="" class="btn-floating red"><i class="material-icons">delete</i></td>
+                    <td><a href="#modal<?php echo $dados["id"];?>" class="btn-floating red modal-trigger"><i class="material-icons">delete</i></td>
+
+                     <!-- Modal Structure -->
+                    <div id="modal1" class="modal">
+                        <div class="modal-content">
+                        <h4>Modal Header</h4>
+                        <p>A bunch of text</p>
+                        </div>
+                        <div class="modal-footer">
+                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                        </div>
+                    </div>
                     <?php 
                     endwhile;
                 ?>
