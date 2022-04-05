@@ -6,5 +6,9 @@
 #H = HORA EM FORMATO DE 24 H
 # i = minutos
 # s = segundos
+# A = p.m ou a.m
+
+#define o timezone
+date_default_timezone_set("America/Sao_Paulo");
 echo date("d/m/Y H:i");
 ?>
