@@ -19,4 +19,10 @@ echo "<hr>";
 $date = date("Y-m-d"); #FORMATO DATE 
 $datetime = date("y-m-d H:m"); #FORMATO DATETIME
 
+echo "<br>";
+
+#time retorna a quantidade de segundosde 1970 até agr
+$time = time();
+#como formatar o time
+echo date("d/m/Y", $time);
 ?>
