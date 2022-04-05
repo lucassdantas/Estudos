@@ -1,11 +1,22 @@
 <?php
 session_start();
 require_once "db_connect.php";
+
+
+#defende de ataque xss
+function clear ($input){
+    global $connect;
+    #escape string defende de sql injection
+    $var = mysqli_escape_string($connect, $input);
+    #defende do xss
+    $var = htmlspecialchars($var);
+    return $var;
+}
 if(isset($_POST["btn-cadastrar"])){
-    $nome = mysqli_escape_string($connect, $_POST["nome"]);
-    $sobrenome = mysqli_escape_string($connect, $_POST["sobrenome"]);
-    $email = mysqli_escape_string($connect, $_POST["email"]);
-    $idade = mysqli_escape_string($connect, $_POST["idade"]);
+    $nome = clear($_POST["nome"]);
+    $sobrenome = clear($_POST["sobrenome"]);
+    $email = clear($_POST["email"]);
+    $idade = clear($_POST["idade"]);
      if((filter_var($email, FILTER_VALIDATE_EMAIL)) && (filter_var($idade, FILTER_VALIDATE_INT)))  {
         $sql = "INSERT INTO clientes (nome, sobrenome, email, idade) VALUES ('$nome', '$sobrenome', '$email', '$idade')";
         if(mysqli_query($connect, $sql)){
