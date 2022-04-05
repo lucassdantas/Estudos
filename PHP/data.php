@@ -14,5 +14,9 @@ echo date("d/m/Y H:i");
 
 echo "<hr>";
 
+#como armazenar datas no banco de dados
+#o banco de dados possui 2 colunas para data: date e datetime
+$date = date("Y-m-d"); #FORMATO DATE 
+$datetime = date("y-m-d H:m"); #FORMATO DATETIME
 
 ?>
