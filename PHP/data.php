@@ -17,7 +17,7 @@ echo "<hr>";
 #como armazenar datas no banco de dados
 #o banco de dados possui 2 colunas para data: date e datetime
 $date = date("Y-m-d"); #FORMATO DATE 
-$datetime = date("y-m-d H:m"); #FORMATO DATETIME
+$datetime = date("y-m-d H:i:s"); #FORMATO DATETIME
 
 echo "<br>";
 
@@ -25,4 +25,13 @@ echo "<br>";
 $time = time();
 #como formatar o time
 echo date("d/m/Y", $time);
+echo "<br>";
+
+#mk time trabalha comd atas passadas ou futuras
+#parametros: hora, minuto, segundo, mês, dia, ano
+$data_pagamento = mktime(15, 30, 00, 02, 01, 2023);
+echo $data_pagamento;
+echo "<br> <p>mk time formatado:</p>";
+#formatar o mktime
+echo date("d/m/y H:m", $data_pagamento);
 ?>
