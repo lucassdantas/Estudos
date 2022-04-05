@@ -34,4 +34,11 @@ echo $data_pagamento;
 echo "<br> <p>mk time formatado:</p>";
 #formatar o mktime
 echo date("d/m/y H:m", $data_pagamento);
+
+#STRTTOTIME CONVERTE DE STRING PARA TIEM
+echo "<hr>";
+$data = "2019-04-10 15:30:00";
+$data = strtotime($data);
+
+echo date("d/m/y", $data);
 ?>
