@@ -1,7 +1,8 @@
+import styles from "./Props.module.css"
 function Teste(){
     return (
         <div>
-            <p>oi</p>
+            <p className={styles.FraseTeste}>oi</p>
         </div>
     )
 }
