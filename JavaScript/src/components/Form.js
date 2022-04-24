@@ -1,4 +1,5 @@
 import {useState} from "react"
+import Event from "./eventos/Event.js"
 function Form(){
     function Enviou(e){
         e.preventDefault()
@@ -10,6 +11,9 @@ function Form(){
         </>
         )
     }   
+    function Evento(){
+        console.log("evento do elemento pai ativado")
+    }
   
     const [name, setName] = useState()
     const [password, setPassword] = useState()
@@ -35,7 +39,8 @@ function Form(){
                 onChange={e => setPassword(e.target.value)}
                 />
                 <input type="submit" />
-
+                <br></br>
+                <Event evento={Evento} texto="oi"/>
                 
             </form>
         
