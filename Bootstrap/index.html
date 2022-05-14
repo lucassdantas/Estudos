@@ -42,7 +42,43 @@
             </nav>
         </div>
     </header>
-    <main></main>
+    <main>
+        <div class="container-fluid">
+            <div id="mainSlider" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#mainSlider" data-slide-to="0" class="active"></li>
+                    <li data-target="#mainSlider" data-slide-to="1"></li>
+                    <li data-target="#mainSlider" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="https://cdn.progresso.com.br/img/pc/780/530/dn_arquivo/2022/03/sao-jose-1.jpg" alt="1">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h2>TEXTO DO SLID1E1</h2>
+                            <p>o texto deve estar dentro da div com essas classes</p>
+                            <a href="#" class="main-btn"> Botão</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="data:image/jpeg;base64,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" alt="2">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h2>TEXTO DO SLIDE2</h2>
+                            <p>o texto deve estar dentro da div com essas classes</p>
+                            <a href="#" class="main-btn"> Botão</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="https://i.ytimg.com/vi/GY8P-qUeW6M/maxresdefault.jpg" alt="3">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h2>TEXTO DO SLIDE 3</h2>
+                            <p>o texto deve estar dentro da div com essas classes</p>
+                            <a href="#" class="main-btn"> Botão</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
     <footer></footer>
 
 
