@@ -20,5 +20,11 @@ select * from turma_1001 where media_nota between 4 and 9;
 select * from turma_1001 where numero >= 3;
 select aluno from turma_1001 where media_nota > 5 and media_nota < 10;
 
+select * from turma_1001 where aluno like "J%";
+select* from turma_1001 where aluno like "e%";
+select * from turma_1001 where aluno like "_e%";
+select aluno from turma_1001 where nascimento like "%01%";
+
+
 delete from turma_1001 where numero = 5;
 update turma_1001 set sexo = "H" where aluno != "J%" limit 3;
