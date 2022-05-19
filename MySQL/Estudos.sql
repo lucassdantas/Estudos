@@ -1,17 +1,18 @@
-create database if not exists escola default character set utf8 default collate utf8_general_ci;
+insert into turma_1001
+(aluno,media_nota,sexo,nascimento) values(
+"lucas","5","M","2002-01-07"),
+("Gustavo","9","M","2002-01-07"),
+("pedro","3","M","2005-01-05"),
+("Jennifer","10","M","2001-01-02");
+
 use escola;
-create table if not exists turma_1001(
-numero int not null auto_increment, 
-aluno varchar(60) not null,
-media_nota decimal(5,2),
-sexo enum("H", "M"),
-nascimento date,
-primary key (numero)
-)default charset = utf8;
-insert into turma_1001(
-aluno, sexo, nscimento) 
-values
-("Lucas", "H", "0502-01-07");
+select*from turma_1001
+order by aluno;
 
 update turma_1001
-set nascimento = "2002-01-07" where aluno = "lucas" limit 1;
+set sexo = "M" where aluno = "Jennifer" limit 1;
+
+select * from turma_1001 where numero > 1 order by aluno desc limit 2  ;
+
+delete from turma_1001 where numero = 5;
+update turma_1001 set sexo = "H" where aluno != "J%" limit 3;
