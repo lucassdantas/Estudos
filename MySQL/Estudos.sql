@@ -28,6 +28,11 @@ select aluno from turma_1001 where nascimento like "%01%";
 select * from turma_1001;
 select distinct nascimento from turma_1001
 order by aluno;
+select distinct sexo from turma_1001;
+
+select count(aluno), aluno       from turma_1001
+group by nascimento;
+
 
 select count(*) from turma_1001 where media_nota > 6;
 select count(aluno) from turma_1001 where media_nota > 6;
