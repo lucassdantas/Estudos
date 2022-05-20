@@ -49,6 +49,7 @@ insert into turma_1001 (media_Turma) values ("6");
 select count(media_Turma) from turma_1001 where media_Turma > 1;
 delete from turma_1001 where media_Turma > 1 limit 8;
 update turma_1001 set media_Turma = "6.75" where numero = 1 limit 1;
+select * from turma_1001;
 
 delete from turma_1001 where numero = 5;
 update turma_1001 set sexo = "H" where aluno != "J%" limit 3;
