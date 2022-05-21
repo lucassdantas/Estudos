@@ -22,8 +22,6 @@ update funcionarios
 set peso = "80" where nome = "Lucas" and admissao = "2021-12-06" limit 1;
 
 delete from funcionarios where nome = "Lucas";
-
+ 
 select * from funcionarios where salario > 1200 group by salario having salario > 900;
 
-alter table 
-modify
